@@ -1,4 +1,13 @@
+const fs = require('fs')
 const pkg = require('./package')
+const testFolder = './tests/'
+const en = require('~/assets/lang/en')
+const fa = require('~/assets/lang/fa')
+fs.readdir(testFolder, (err, files) => {
+  files.forEach(file => {
+    console.log(file)
+  })
+})
 
 module.exports = {
   mode: 'universal',
@@ -39,6 +48,20 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt'
+    // [
+    //   'nuxt-lang',
+    //   {
+    //     locales: ['en', 'fa'],
+    //     defaultLocale: 'en',
+    //     vueI18n: {
+    //       fallbackLocale: 'en',
+    //       messages: {
+    //         en,
+    //         fa
+    //       }
+    //     }
+    //   }
+    // ]
   ],
   /*
   ** Axios module configuration
