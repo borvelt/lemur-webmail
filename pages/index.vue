@@ -6,6 +6,7 @@
       <H2 class="subtitle">
         A web mail to communicate like lemur
       </H2>
+      <h2>{{ $t('text.title') }}</h2>
       <div class="links">
         <Button
           href="https://nuxtjs.org/"
@@ -15,6 +16,7 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="gray">GitHub</Button>
+        <ChangeLocale />
       </div>
     </div>
   </Container>
@@ -27,10 +29,12 @@ import H1 from '~/components/H1'
 import H2 from '~/components/H2'
 import A from '~/components/A'
 import Button from '~/components/Button'
+import ChangeLocale from '~/components/ChangeLocale'
 
 export default {
   components: {
     Logo,
+    ChangeLocale,
     Button,
     A,
     H1,

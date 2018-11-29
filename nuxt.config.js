@@ -1,13 +1,5 @@
-const fs = require('fs')
 const pkg = require('./package')
-const testFolder = './tests/'
-const en = require('~/assets/lang/en')
-const fa = require('~/assets/lang/fa')
-fs.readdir(testFolder, (err, files) => {
-  files.forEach(file => {
-    console.log(file)
-  })
-})
+const langConfig = require('./lang/config')
 
 module.exports = {
   mode: 'universal',
@@ -28,7 +20,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#3b8070' },
 
   /*
   ** Global CSS
@@ -47,21 +39,8 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
-    // [
-    //   'nuxt-lang',
-    //   {
-    //     locales: ['en', 'fa'],
-    //     defaultLocale: 'en',
-    //     vueI18n: {
-    //       fallbackLocale: 'en',
-    //       messages: {
-    //         en,
-    //         fa
-    //       }
-    //     }
-    //   }
-    // ]
+    'bootstrap-vue/nuxt',
+    ['nuxt-i18n', langConfig]
   ],
   /*
   ** Axios module configuration
@@ -69,7 +48,8 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
+  //Router middleware:
+  router: {},
   /*
   ** Build configuration
   */
