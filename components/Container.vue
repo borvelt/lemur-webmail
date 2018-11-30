@@ -1,15 +1,19 @@
 <template>
-  <section>
+  <div class="container">
     <slot />
-  </section>
+  </div>
 </template>
 
-<style scoped>
-section {
+<style lang="scss">
+@import '~assets/colors';
+.container {
+  background-color: $green;
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 </style>

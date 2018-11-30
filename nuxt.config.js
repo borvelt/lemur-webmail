@@ -2,8 +2,8 @@ const pkg = require('./package')
 const langConfig = require('./lang/config')
 
 module.exports = {
-  mode: 'universal',
-
+  // mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */

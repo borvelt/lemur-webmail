@@ -1,13 +1,24 @@
 <template>
-  <div>
+  <Container>
     <nuxt/>
-  </div>
+  </Container>
 </template>
+
+<script>
+import Container from '~/components/Container'
+export default {
+  components: {
+    Container
+  }
+}
+</script>
 
 <style lang="scss">
 @import '~assets/dimensions';
+@import '~assets/colors';
 @import '~assets/defaults';
 html {
+  background-color: $green;
   font-family: $font-stack;
   font-size: $font-size;
   word-spacing: 1px;

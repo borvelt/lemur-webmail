@@ -1,15 +1,17 @@
 <template>
-  <select
-    v-model="locale"
-    name="locale"
-    title="Locale"
-    @change="onChange()"
-  >
-    <option
-      v-for="locale in locales"
-      :key="locale.iso"
-      :value="locale.code">{{ locale.name }}</option>
-  </select>
+  <div>
+    <select
+      v-model="locale"
+      name="locale"
+      title="Locale"
+      @change="onChange()"
+    >
+      <option
+        v-for="locale in locales"
+        :key="locale.iso"
+        :value="locale.code">{{ locale.name }}</option>
+    </select>
+  </div>
 </template>
 
 <script>
@@ -35,3 +37,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+div {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
+</style>

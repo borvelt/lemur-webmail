@@ -3,7 +3,9 @@
   <a><slot /></a>
 
 </template>
-
+<script>
+export default {}
+</script>
 <style scoped>
 a {
   color: #41addd;

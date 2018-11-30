@@ -1,13 +1,30 @@
 <template>
-  <A><slot /></A>
+
+  <nuxt-link :to="toWithLocale"><slot /></nuxt-link>
 </template>
 
 <script>
-import A from '~/components/A'
-
 export default {
-  components: {
-    A
+  props: {
+    to: {
+      type: [String, Object],
+      default: function() {
+        return {}
+      }
+    }
+  },
+  computed: {
+    toWithLocale: function() {
+      return this.to instanceof Object
+        ? {
+            name: [
+              this.to.name,
+              this.$i18n.routesNameSeparator,
+              this.$store.state.i18n.locale
+            ].join('')
+          }
+        : this.to
+    }
   }
 }
 </script>
@@ -37,12 +54,12 @@ a:hover
   background-color: $green
 
 .green:hover
-  background-color: $hover-green
+  background-color: $dark-green
 
 .gray
   background-color: $gray
 
 .gray:hover
-  background-color: $hover-gray
+  background-color: $dark-gray
 
 </style>

@@ -1,5 +1,7 @@
 {
   "text": {
-    "title": "Lemur"
+    "title": "lemur web mail",
+    "description": "A web mail to communicate like lemur",
+    "lemur": "lemur"
   }
 }
