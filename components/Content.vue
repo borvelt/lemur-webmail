@@ -18,5 +18,6 @@
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 5px;
+  align-items: center;
 }
 </style>

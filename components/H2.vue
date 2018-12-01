@@ -5,5 +5,6 @@
 <style scoped>
 h2 {
   font-size: 3em;
+  margin: 0;
 }
 </style>

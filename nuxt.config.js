@@ -20,7 +20,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3b8070' },
+  loading: { color: '#fff', height: '5px' },
 
   /*
   ** Global CSS
@@ -49,7 +49,7 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
   },
   //Router middleware:
-  router: {},
+  router: { middleware: 'router-store' },
   /*
   ** Build configuration
   */

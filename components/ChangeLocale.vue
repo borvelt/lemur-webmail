@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="locale-wrapper">
     <select
       v-model="locale"
       name="locale"
@@ -38,10 +38,17 @@ export default {
 }
 </script>
 
-<style scoped>
-div {
+<style scoped lang="scss">
+@import '~assets/colors';
+.locale-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin: 15px;
+  padding: 15px;
+  width: 100%;
+}
+.locale-wrapper > select {
+  border: none;
+  background-color: $dark-green;
+  color: $white;
 }
 </style>

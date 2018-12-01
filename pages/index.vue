@@ -46,7 +46,9 @@ h2 {
   word-spacing: 5px;
   padding-bottom: 15px;
 }
-
+.logo-wrapper {
+  width: 25%;
+}
 .links {
   padding-top: 15px;
 }
