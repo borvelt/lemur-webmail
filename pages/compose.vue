@@ -52,20 +52,18 @@ export default {
   },
   data: function() {
     return {
-      newMessage: {
-        subject: '',
-        to: '',
-        bcc: '',
-        body: ''
-      }
+      newMessage: this.$store.app.$mail.initialize()
     }
   },
   methods: {
     buttonClick() {
-      console.log(this.newMessage)
+      this.$store
+        .dispatch('mail/sendMail', this.newMessage)
+        .then(result => alert(result))
+        .catch(error => alert(error))
+        .finally(this.resetForm)
     },
     resetForm() {
-      console.log('resetForm', this.$data)
       Object.assign(this.$data, { newMessage: {} })
     }
   }
@@ -74,11 +72,6 @@ export default {
 
 <style scoped lang="scss">
 @import '~assets/colors';
-
-.content {
-  justify-content: flex-start;
-  align-items: stretch;
-}
 
 .compose-body {
   width: 100%;
@@ -111,16 +104,6 @@ export default {
 
 .compose-body .actions .button {
   margin: 10px 0 0 10px;
-}
-
-.compose-body .subject {
-}
-.compose-body .to {
-}
-
-.compose-body .bcc {
-}
-.compose-body .body {
 }
 
 ::placeholder {

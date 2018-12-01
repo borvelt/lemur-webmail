@@ -8,14 +8,14 @@
   color: #fff;
   background-color: $gray;
   min-height: 85vh;
-  max-width: 60vw;
+  width: 60vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: stretch;
   flex-direction: column;
   box-shadow: 3px 3px 20px #111;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 5px;
-  align-items: center;
 }
 </style>

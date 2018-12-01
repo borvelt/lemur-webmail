@@ -1,4 +1,7 @@
 {
+  "lemur": {
+    "about": "Why lemur?"
+  },
   "text": {
     "about": "About",
     "start": "Start",
@@ -11,11 +14,12 @@
     "draft": "Draft",
     "flagged": "Flagged",
     "search": "Search",
+    "searchPlaceHolder": "Type here",
     "mail": {
-      "bcc": "BCC:",
-      "subject": "Subject:",
-      "to": "To:",
-      "body": "Write Your Text Here...",
+      "bcc": "BCC",
+      "subject": "Subject",
+      "to": "To",
+      "body": "Write Your Text Here",
       "send": "Send",
       "discard": "Discard"
     }

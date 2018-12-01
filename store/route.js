@@ -1,9 +1,9 @@
 export const state = () => ({
-  route: '/'
+  name: ''
 })
 
 export const mutations = {
   set(state, newRoute) {
-    state.route = newRoute.name
+    state.name = newRoute
   }
 }
