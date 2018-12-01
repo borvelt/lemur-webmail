@@ -2,23 +2,22 @@
   <header class="header">
     <Logo />
     <H2>{{ $t('text.' + routeName) }}</H2>
-    <input :model="q"
-           :value="q"
-           :placeholder="$t('text.search')"
-           type="text" name="q"
-    />
+    <input v-model="q" :placeholder="$t('text.search')" type="text" name="q" />
     <ul class="actions">
       <li class="compose">
-        <A :to="{name: 'compose'}">{{ $t('text.compose') }}</A>
+        <A :to="{ name: 'compose' }">{{ $t('text.compose') }}</A>
       </li>
-      <li class="draft">
-        <A :to="{name: 'draft'}">{{ $t('text.draft') }}</A>
+      <li class="sent">
+        <A :to="{ name: 'sent' }">{{ $t('text.sent') }}</A>
       </li>
       <li class="inbox">
-        <A :to="{name: 'inbox'}">{{ $t('text.inbox') }}</A>
+        <A :to="{ name: 'inbox' }">{{ $t('text.inbox') }}</A>
+      </li>
+      <li class="draft">
+        <A :to="{ name: 'draft' }">{{ $t('text.draft') }}</A>
       </li>
       <li class="flagged">
-        <A :to="{name: 'flagged'}">{{ $t('text.flagged') }}</A>
+        <A :to="{ name: 'flagged' }">{{ $t('text.flagged') }}</A>
       </li>
     </ul>
     <ChangeLocale />
@@ -27,7 +26,7 @@
 
 <script>
 import Content from '~/components/Content'
-import H1 from '~/components/H1'
+import H2 from '~/components/H2'
 import Logo from '~/components/Logo'
 import ChangeLocale from '~/components/ChangeLocale'
 import A from '~/components/A'
@@ -35,14 +34,14 @@ import A from '~/components/A'
 export default {
   components: {
     Content,
-    H1,
+    H2,
     Logo,
     ChangeLocale,
     A
   },
   data: function() {
     return {
-      q: 'search'
+      q: ''
     }
   },
   computed: {
@@ -59,6 +58,8 @@ header {
   color: $black;
   background-color: $white;
   width: 100%;
+  flex: 1 auto;
+  max-height: 70px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -76,9 +77,16 @@ header > h2 {
 }
 
 header > input {
+  color: $black;
   font-size: 2em;
   flex: 10 auto;
+  text-align: center;
+  border: none;
 }
+header > input::placeholder {
+  color: $black;
+}
+
 header > .actions {
   margin-bottom: 0;
   padding: 0;

@@ -1,9 +1,8 @@
 <template>
   <div class="logo-wrapper">
-    <img :alt="$t('text.title')" src="~/static/lemur.png">
+    <img :alt="$t('text.title')" src="~/static/lemur.png" />
   </div>
 </template>
-
 
 <style scoped>
 img {

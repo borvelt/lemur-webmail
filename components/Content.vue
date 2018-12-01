@@ -1,7 +1,5 @@
 <template>
-  <div class="content">
-    <slot />
-  </div>
+  <div class="content"><slot /></div>
 </template>
 
 <style lang="scss">
@@ -10,7 +8,7 @@
   color: #fff;
   background-color: $gray;
   min-height: 85vh;
-  width: 60vw;
+  max-width: 60vw;
   display: flex;
   justify-content: space-between;
   flex-direction: column;

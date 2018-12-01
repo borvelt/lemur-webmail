@@ -1,15 +1,9 @@
 <template>
   <div class="locale-wrapper">
-    <select
-      v-model="locale"
-      name="locale"
-      title="Locale"
-      @change="onChange()"
-    >
-      <option
-        v-for="locale in locales"
-        :key="locale.iso"
-        :value="locale.code">{{ locale.name }}</option>
+    <select v-model="locale" name="locale" title="Locale" @change="onChange()">
+      <option v-for="locale in locales" :key="locale.iso" :value="locale.code">
+        {{ locale.name }}
+      </option>
     </select>
   </div>
 </template>

@@ -1,7 +1,23 @@
 {
   "text": {
-    "title": "lemur web mail",
+    "about": "About",
+    "start": "Start",
+    "title": "Lemur Web Mail",
     "description": "A web mail to communicate like lemur",
-    "lemur": "lemur"
+    "lemur": "lemur",
+    "compose": "Compose",
+    "sent": "Sent",
+    "inbox": "Inbox",
+    "draft": "Draft",
+    "flagged": "Flagged",
+    "search": "Search",
+    "mail": {
+      "bcc": "BCC:",
+      "subject": "Subject:",
+      "to": "To:",
+      "body": "Write Your Text Here...",
+      "send": "Send",
+      "discard": "Discard"
+    }
   }
 }

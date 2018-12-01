@@ -4,9 +4,12 @@
     <H1>{{ $t('text.title') }}</H1>
     <H2>{{ $t('text.description') }}</H2>
     <div class="links">
-      <Button
-        :to="{name: 'compose'}"
-        class="green">{{ $t('text.start') }}</Button>
+      <A :to="{ name: 'compose' }" class="button green no-border">{{
+        $t('text.compose')
+      }}</A>
+      <A :to="{ name: 'about' }" class="button green no-border">{{
+        $t('text.about')
+      }}</A>
     </div>
     <ChangeLocale />
   </Content>
@@ -17,14 +20,14 @@ import Logo from '~/components/Logo'
 import Content from '~/components/Content'
 import H1 from '~/components/H1'
 import H2 from '~/components/H2'
-import Button from '~/components/Button'
+import A from '~/components/A'
 import ChangeLocale from '~/components/ChangeLocale'
 
 export default {
   components: {
     Logo,
     ChangeLocale,
-    Button,
+    A,
     H1,
     H2,
     Content
