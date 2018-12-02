@@ -48,7 +48,7 @@ export default ({ app, error }) => {
             resolve(
               Object.assign({}, { status: true, time: Date.now() }, message)
             ),
-          0
+          1000
         )
       )
     },

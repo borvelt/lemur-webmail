@@ -57,12 +57,16 @@ export default {
   },
   methods: {
     send() {
+      this.$nuxt.$loading.start()
       this.newMessage.from = this.$store.state.user.current.email
       this.$store
         .dispatch('mail/sendMail', this.newMessage)
-        .then(result => alert(result))
+        .then(() => alert('Message sent.'))
         .catch(error => alert(error))
-        .finally(this.resetForm)
+        .finally(() => {
+          this.$nuxt.$loading.finish()
+          this.resetForm()
+        })
     },
     resetForm() {
       Object.assign(this.$data, { newMessage: {} })

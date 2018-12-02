@@ -23,10 +23,10 @@ export default {
     users() {
       return [
         { name: 'borvelt', email: 'borvelt@gmail.com' },
-        { name: 'Lenny Montana', email: 'LucaBrasi@gmail.com' },
-        { name: 'Walter Bishop', email: 'WalterBishop@gmail.com' },
+        { name: 'Lenny Montana', email: 'lucabrasi@gmail.com' },
+        { name: 'Walter Bishop', email: 'walterbishop@gmail.com' },
         { name: 'Ernest Rutherford', email: 'erru@gmail.com' },
-        { name: 'Ted Beneke', email: 'Ted@gmail.com' }
+        { name: 'Ted Beneke', email: 'ted@gmail.com' }
       ]
     }
   },
