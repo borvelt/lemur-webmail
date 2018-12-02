@@ -1,5 +1,5 @@
 <template>
-  <div class="select-box-wrapper">
+  <div :class="className" class="select-box-wrapper">
     <select :value="value" :name="name" @change="_onChange($event)">
       <option v-for="item in list" :key="item.key" :value="item.key">
         {{ item.value }}
@@ -14,7 +14,15 @@ export default {
     prop: 'value',
     event: 'change'
   },
-  props: ['value', 'name', 'title', 'items', 'mapper', 'on-change'],
+  props: [
+    'value',
+    'name',
+    'title',
+    'items',
+    'mapper',
+    'on-change',
+    'className'
+  ],
   created() {
     this.list = this.items.map(this.mapper)
   },

@@ -4,7 +4,7 @@
     :items="locales"
     :mapper="mapper"
     :on-change="onChange"
-    class="locale-wrapper"
+    class-name="locale-wrapper"
   />
 </template>
 
@@ -37,3 +37,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.locale-wrapper {
+  padding: 10px;
+}
+</style>
