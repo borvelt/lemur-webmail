@@ -15,8 +15,7 @@ export default {
     event: 'change'
   },
   props: ['value', 'name', 'title', 'items', 'mapper', 'on-change'],
-  beforeMount() {
-    console.log('*************', this.items)
+  created() {
     this.list = this.items.map(this.mapper)
   },
   methods: {
