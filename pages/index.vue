@@ -4,12 +4,12 @@
     <H1>{{ $t('text.title') }}</H1>
     <H2>{{ $t('text.description') }}</H2>
     <div class="links">
-      <A :to="{ name: 'compose' }" class="button green no-border">{{
-        $t('text.compose')
-      }}</A>
-      <A :to="{ name: 'about' }" class="button green no-border">{{
-        $t('text.about')
-      }}</A>
+      <A :to="{ name: 'compose' }" class="button green no-border">
+        {{ $t('text.compose') }}
+      </A>
+      <A :to="{ name: 'about' }" class="button green no-border">
+        {{ $t('text.about') }}
+      </A>
     </div>
     <ChangeLocale />
   </Content>
@@ -22,6 +22,8 @@ import H1 from '~/components/H1'
 import H2 from '~/components/H2'
 import A from '~/components/A'
 import ChangeLocale from '~/components/ChangeLocale'
+import SelectBox from '~/components/SelectBox'
+import SwitchUser from '~/components/SwitchUser'
 
 export default {
   components: {
@@ -30,7 +32,9 @@ export default {
     A,
     H1,
     H2,
-    Content
+    Content,
+    SelectBox,
+    SwitchUser
   }
 }
 </script>
@@ -51,6 +55,9 @@ h2 {
 }
 .logo-wrapper {
   width: 25%;
+}
+.select-box {
+  padding: 15px;
 }
 .links {
   padding-top: 15px;

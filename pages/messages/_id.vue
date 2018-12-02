@@ -1,0 +1,47 @@
+<template>
+  <Content>
+    <Header :title="message.subject" />
+    <div class="show-message">
+      <div class="messages-list">
+        <div :key="message.time" class="message-item">
+          <div>
+            <h5 class="label">{{ $t('text.mail.subject') }}</h5>
+            <span>{{ message.subject }}</span>
+          </div>
+          <div>
+            <h5 class="label">{{ $t(message.translationString) }}</h5>
+            <span>{{ message.dest }}</span>
+          </div>
+          <p class="label body">{{ message.body }}</p>
+        </div>
+      </div>
+    </div>
+  </Content>
+</template>
+
+<script>
+import Content from '~/components/Content'
+import Header from '~/components/Header'
+
+export default {
+  components: {
+    Content,
+    Header
+  },
+  asyncData({ params, app }) {
+    return app.$mail.findById(params)
+  }
+}
+</script>
+
+<style scoped lang="scss">
+@import '~assets/messages';
+.show-message {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.message-item {
+}
+</style>

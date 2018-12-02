@@ -16,6 +16,8 @@ module.exports = {
   plugins: ['vue', 'prettier'],
 
   rules: {
+    'vue/no-shared-component-data': 'off',
+    'vue/require-prop-types': 'off',
     'vue/html-self-closing': 'off',
     'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }],
     'prettier/prettier': 'error',

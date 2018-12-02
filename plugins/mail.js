@@ -1,4 +1,4 @@
-export default ({ app }) => {
+export default ({ app, error }) => {
   app.$mail = {
     seed() {
       return [
@@ -48,9 +48,31 @@ export default ({ app }) => {
             resolve(
               Object.assign({}, { status: true, time: Date.now() }, message)
             ),
-          2000
+          0
         )
       )
+    },
+    findById(params) {
+      const currentUserEmail = app.store.state.user.current.email
+      const messages = app.store.state.mail.messages
+      const [message] = messages.filter(
+        message =>
+          message.time === params.id &&
+          (message.from === currentUserEmail || message.to === currentUserEmail)
+      )
+      if (!message) {
+        return error({ statusCode: 404, message: 'Post not found' })
+      }
+      if (currentUserEmail === message.to) {
+        message.dest = message.from
+        message.translationString = 'text.mail.from'
+      } else {
+        message.dest = message.to
+        message.translationString = 'text.mail.to'
+      }
+      return {
+        message
+      }
     }
   }
 }

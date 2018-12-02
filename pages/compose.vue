@@ -30,7 +30,7 @@
       ></textarea>
 
       <div class="actions">
-        <button class="button gray no-border" @click="buttonClick">
+        <button class="button gray no-border" @click="send">
           <span v-once>{{ $t('text.mail.send') }}</span>
         </button>
         <button class="button gray no-border" @click="resetForm">
@@ -56,7 +56,8 @@ export default {
     }
   },
   methods: {
-    buttonClick() {
+    send() {
+      this.newMessage.from = this.$store.state.user.current.email
       this.$store
         .dispatch('mail/sendMail', this.newMessage)
         .then(result => alert(result))

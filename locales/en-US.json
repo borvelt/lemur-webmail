@@ -16,12 +16,16 @@
     "search": "Search",
     "searchPlaceHolder": "Type here",
     "mail": {
+      "messageNotFound": "Looking for what?",
       "bcc": "BCC",
       "subject": "Subject",
       "to": "To",
+      "from": "From",
       "body": "Write Your Text Here",
       "send": "Send",
-      "discard": "Discard"
+      "discard": "Discard",
+      "sentBoxEmpty": "There is no message in your Sent Box.",
+      "inboxEmpty": "Your inbox is empty."
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <Logo />
-    <H2>{{ $t('text.' + routeName) }}</H2>
+    <H2>{{ title || $t('text.' + routeName) }}</H2>
 
     <input
       v-model="q"
@@ -26,18 +26,8 @@
           <i class="fas fa-inbox"></i>
         </A>
       </li>
-      <li class="draft">
-        <A :to="{ name: 'draft' }" class="button">
-          <i class="fas fa-edit"></i>
-        </A>
-      </li>
-      <li class="flagged">
-        <A :to="{ name: 'flagged' }" class="button">
-          <i class="fab fa-font-awesome-flag"></i>
-        </A>
-      </li>
     </ul>
-    <ChangeLocale />
+    <SwitchUser />
   </header>
 </template>
 
@@ -45,7 +35,7 @@
 import Content from '~/components/Content'
 import H2 from '~/components/H2'
 import Logo from '~/components/Logo'
-import ChangeLocale from '~/components/ChangeLocale'
+import SwitchUser from '~/components/SwitchUser'
 import A from '~/components/A'
 
 export default {
@@ -53,8 +43,14 @@ export default {
     Content,
     H2,
     Logo,
-    ChangeLocale,
+    SwitchUser,
     A
+  },
+  props: {
+    title: {
+      type: [String, Boolean],
+      default: () => false
+    }
   },
   data: function() {
     return {
@@ -84,6 +80,7 @@ header {
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
+
 header .logo-wrapper {
   max-width: 70px;
   flex: 0.1 auto;

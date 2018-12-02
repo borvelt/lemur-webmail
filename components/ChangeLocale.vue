@@ -1,15 +1,18 @@
 <template>
-  <div class="locale-wrapper">
-    <select v-model="locale" name="locale" title="Locale" @change="onChange()">
-      <option v-for="locale in locales" :key="locale.iso" :value="locale.code">
-        {{ locale.name }}
-      </option>
-    </select>
-  </div>
+  <SelectBox
+    v-model="locale"
+    :items="locales"
+    :mapper="mapper"
+    :on-change="onChange"
+    class="locale-wrapper"
+  />
 </template>
 
 <script>
+import SelectBox from '~/components/SelectBox'
+
 export default {
+  components: { SelectBox },
   data: function() {
     return {
       locale: this.$store.state.i18n.locale
@@ -21,6 +24,9 @@ export default {
     }
   },
   methods: {
+    mapper(x) {
+      return { key: x.code, value: x.name }
+    },
     onChange() {
       const [page] = this.$router.currentRoute.name.split(
         this.$i18n.routesNameSeparator
@@ -31,18 +37,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-@import '~assets/colors';
-.locale-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  padding: 15px;
-  width: 100%;
-}
-.locale-wrapper > select {
-  border: none;
-  background-color: $dark-green;
-  color: $white;
-}
-</style>
