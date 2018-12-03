@@ -4,6 +4,7 @@
     :items="users"
     :mapper="mapper"
     :on-change="onChange"
+    class="SwitchUser"
   />
 </template>
 

@@ -21,7 +21,7 @@ export default {
 <style scoped lang="scss">
 @import '~assets/defaults';
 
-.content {
+.Content {
   justify-content: center;
 }
 .about-body {

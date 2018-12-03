@@ -6,36 +6,32 @@
         v-model="newMessage.to"
         :placeholder="$t('text.mail.to')"
         type="text"
-        class="input to"
       />
 
       <input
         v-model="newMessage.bcc"
         :placeholder="$t('text.mail.bcc')"
         type="text"
-        class="input bcc"
       />
 
       <input
         v-model="newMessage.subject"
         :placeholder="$t('text.mail.subject')"
         type="text"
-        class="input subject"
       />
 
       <textarea
         v-model="newMessage.body"
         :placeholder="$t('text.mail.body')"
-        class="input body"
       ></textarea>
 
       <div class="actions">
-        <button class="button gray no-border" @click="send">
+        <Button class="gray no-border" @click.native="send">
           <span v-once>{{ $t('text.mail.send') }}</span>
-        </button>
-        <button class="button gray no-border" @click="resetForm">
+        </Button>
+        <Button class="gray no-border" @click.native="resetForm">
           <span v-once>{{ $t('text.mail.discard') }}</span>
-        </button>
+        </Button>
       </div>
     </div>
   </Content>
@@ -44,11 +40,13 @@
 <script>
 import Content from '~/components/Content'
 import Header from '~/components/Header'
+import Button from '~/components/Button'
 
 export default {
   components: {
     Content,
-    Header
+    Header,
+    Button
   },
   data: function() {
     return {
@@ -86,7 +84,8 @@ export default {
   flex: 1 auto;
 }
 
-.compose-body .input {
+.compose-body input,
+.compose-body textarea {
   border: none;
   padding: $compose-body-padding;
   background-color: transparent;
@@ -95,7 +94,7 @@ export default {
   max-height: $compose-body-input-max-height;
 }
 
-.compose-body textarea.input {
+.compose-body textarea {
   resize: none;
   max-height: unset;
 }
@@ -106,7 +105,7 @@ export default {
   align-self: flex-end;
 }
 
-.compose-body .actions .button {
+.compose-body .actions .Button {
   margin: $compose-body-actions-margin;
 }
 

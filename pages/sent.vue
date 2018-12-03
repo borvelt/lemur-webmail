@@ -1,9 +1,7 @@
 <template>
   <Content>
     <Header />
-    <div class="sent-body">
-      <div class="inbox-body"><MessagesList :list="messages" /></div>
-    </div>
+    <div class="sent-body"><MessagesList :list="messages" /></div>
   </Content>
 </template>
 

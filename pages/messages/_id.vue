@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.header /deep/ h2 {
+.Header /deep/ .H2 {
   font-size: 1.5rem !important;
 }
 </style>

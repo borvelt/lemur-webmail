@@ -1,10 +1,10 @@
 <template>
-  <h1><slot /></h1>
+  <h1 class="H1"><slot /></h1>
 </template>
 
 <style scoped lang="scss">
 @import '~assets/dimensions';
-h1 {
+.H1 {
   font-size: $h1-font-size;
 }
 </style>

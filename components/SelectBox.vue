@@ -1,5 +1,5 @@
 <template>
-  <div :class="className" class="select-box-wrapper">
+  <div class="SelectBox-wrapper">
     <select :value="value" :name="name" @change="_onChange($event)">
       <option v-for="item in list" :key="item.key" :value="item.key">
         {{ item.value }}
@@ -14,15 +14,7 @@ export default {
     prop: 'value',
     event: 'change'
   },
-  props: [
-    'value',
-    'name',
-    'title',
-    'items',
-    'mapper',
-    'on-change',
-    'className'
-  ],
+  props: ['value', 'name', 'title', 'items', 'mapper', 'on-change'],
   created() {
     this.list = this.items.map(this.mapper)
   },
@@ -37,11 +29,12 @@ export default {
 
 <style scoped lang="scss">
 @import '~assets/colors';
-.select-box-wrapper {
+
+.SelectBox-wrapper {
   display: flex;
   justify-content: flex-end;
 }
-.select-box-wrapper > select {
+.SelectBox-wrapper > select {
   width: 100%;
   border: none;
   background-color: $dark-green;

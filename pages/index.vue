@@ -11,7 +11,7 @@
         {{ $t('text.about') }}
       </A>
     </div>
-    <ChangeLocale class="switch-locale" />
+    <ChangeLocale />
   </Content>
 </template>
 
@@ -43,29 +43,27 @@ export default {
 @import '~assets/colors';
 @import '~assets/defaults';
 
-h1 {
+.H1 {
   font-family: $title-font;
   display: block;
 }
 
-h2 {
+.H2 {
   color: $green;
   word-spacing: 5px;
   padding-bottom: 15px;
 }
-.logo-wrapper {
+
+.Logo-wrapper {
   width: 25%;
-}
-.select-box {
-  padding: 15px;
 }
 .links {
   padding-top: 15px;
 }
-.switch-locale {
+.ChangeLocale {
   align-self: flex-end;
 }
-.select-box-wrapper /deep/ select {
+.ChangeLocale /deep/ select {
   -webkit-border-radius: 0.4rem;
   -moz-border-radius: 0.4rem;
   border-radius: 0.4rem 0 0 0;

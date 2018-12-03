@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .inbox-body {
   width: 100%;
   display: flex;

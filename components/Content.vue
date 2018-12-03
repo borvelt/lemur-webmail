@@ -1,10 +1,11 @@
 <template>
-  <div class="content"><slot /></div>
+  <div class="Content"><slot /></div>
 </template>
 
 <style lang="scss">
 @import '~assets/colors';
-.content {
+
+.Content {
   color: #fff;
   background-color: $gray;
   min-height: 85vh;

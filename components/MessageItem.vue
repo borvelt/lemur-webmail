@@ -1,6 +1,6 @@
 <template>
-  <div class="message-item-wrapper">
-    <div :key="item.time" class="message-item">
+  <div class="MessageItem-wrapper">
+    <div :key="item.time" class="MessageItem">
       <div>
         <h5 class="label">{{ $t('text.mail.subject') }}</h5>
         <span>{{ item.subject }}</span>
@@ -35,20 +35,21 @@ export default {
 need messageItem styles in parent directory.-->
 <style lang="scss">
 @import '~assets/colors';
+@import '~assets/dimensions';
 
-.message-item-wrapper {
+.MessageItem-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.message-item {
+.MessageItem {
   width: 90%;
   background-color: $white;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: $default-radius;
+  -moz-border-radius: $default-radius;
+  border-radius: $default-radius;
   color: $black;
   display: flex;
   flex-direction: column;
@@ -57,20 +58,20 @@ need messageItem styles in parent directory.-->
   margin: 0.5rem 0 0.5rem 0.1px;
 }
 
-.message-item.centered {
+.MessageItem.centered {
   align-items: center;
 }
 
-.message-item div {
+.MessageItem div {
   margin: 5px 0 5px 0;
 }
 
-.message-item .label {
+.MessageItem .label {
   margin: 0 10px 0 3px;
   display: inline;
 }
 
-.message-item .body {
+.MessageItem .body {
   text-align: left;
 }
 </style>

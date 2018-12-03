@@ -1,5 +1,5 @@
 <template>
-  <div class="messages-list">
+  <div class="MessagesList">
     <A
       v-for="message in list"
       :key="message.time"
@@ -7,8 +7,8 @@
     >
       <MessageItem :item="message" />
     </A>
-    <div v-if="!list.length" class="message-item centered">
-      {{ $t('text.mail.inboxEmpty') }}
+    <div v-if="!list.length" class="MessageItem centered">
+      {{ $t('text.mail.boxEmpty') }}
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style>
-.messages-list {
+.MessagesList {
   width: 90%;
   padding: 10px 0;
   list-style: none;

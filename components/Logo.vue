@@ -1,11 +1,11 @@
 <template>
-  <div class="logo-wrapper">
+  <div class="Logo-wrapper">
     <img :alt="$t('text.title')" src="~/static/lemur.png" />
   </div>
 </template>
 
 <style scoped>
-.logo-wrapper {
+.Logo-wrapper {
   flex: 1 auto;
   display: flex;
   align-self: center;

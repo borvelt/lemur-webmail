@@ -14,9 +14,10 @@
     "draft": "Draft",
     "flagged": "Flagged",
     "search": "Search",
-    "searchPlaceHolder": "Type here",
+    "searchPlaceHolder": "disabled :(",
     "messages-id": "Messages",
     "mail": {
+      "boxEmpty": "There is no message in your box.",
       "messageNotFound": "Looking for what?",
       "bcc": "BCC",
       "subject": "Subject",
