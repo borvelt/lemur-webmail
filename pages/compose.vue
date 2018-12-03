@@ -77,23 +77,22 @@ export default {
 
 <style scoped lang="scss">
 @import '~assets/colors';
+@import '~assets/dimensions';
 
 .compose-body {
-  width: 100%;
-  padding: 15px;
+  padding: $compose-body-padding;
   display: flex;
   flex-direction: column;
   flex: 1 auto;
 }
 
 .compose-body .input {
-  font-size: 1.2em;
   border: none;
-  padding: 10px;
+  padding: $compose-body-padding;
   background-color: transparent;
   border-bottom: 1px solid $white;
   flex: 1 auto;
-  max-height: 50px;
+  max-height: $compose-body-input-max-height;
 }
 
 .compose-body textarea.input {
@@ -108,7 +107,7 @@ export default {
 }
 
 .compose-body .actions .button {
-  margin: 10px 0 0 10px;
+  margin: $compose-body-actions-margin;
 }
 
 ::placeholder {

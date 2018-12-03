@@ -4,7 +4,6 @@
     :items="locales"
     :mapper="mapper"
     :on-change="onChange"
-    class-name="locale-wrapper"
   />
 </template>
 
@@ -13,6 +12,7 @@ import SelectBox from '~/components/SelectBox'
 
 export default {
   components: { SelectBox },
+  props: {},
   data: function() {
     return {
       locale: this.$store.state.i18n.locale
@@ -37,9 +37,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.locale-wrapper {
-  padding: 10px;
-}
-</style>

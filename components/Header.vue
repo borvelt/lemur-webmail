@@ -7,6 +7,7 @@
       v-model="q"
       :placeholder="$t('text.searchPlaceHolder')"
       type="text"
+      class="search-bar"
       name="q"
     />
 
@@ -27,7 +28,7 @@
         </A>
       </li>
     </ul>
-    <SwitchUser />
+    <SwitchUser class="switch-user" />
   </header>
 </template>
 
@@ -67,6 +68,8 @@ export default {
 
 <style scoped lang="scss">
 @import '~assets/colors';
+@import '~assets/dimensions';
+
 header {
   color: $black;
   background-color: $white;
@@ -76,35 +79,30 @@ header {
   justify-content: space-between;
   flex-direction: row;
   align-items: stretch;
-  -webkit-border-radius: 5px 5px 0 0;
-  -moz-border-radius: 5px 5px 0 0;
-  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 0.4rem 0.4rem 0 0;
+  -moz-border-radius: 0.4rem 0.4rem 0 0;
+  border-radius: 0.4rem 0.4rem 0 0;
 }
 
-header .logo-wrapper {
-  max-width: 70px;
+.logo-wrapper {
+  max-width: 2rem;
   flex: 0.1 auto;
 }
 
-header > h2 {
-  min-width: 214px;
+h2 {
+  min-width: 8.9rem;
   align-self: center;
   flex: 0.3 auto;
 }
 
-header > input {
+.search-bar {
   color: $black;
-  font-size: 1.5em;
   flex: 0.3 auto;
   text-align: center;
   border: none;
 }
-header > input::placeholder {
-  color: $black;
-  text-decoration: underline;
-}
 
-header > .actions {
+.actions {
   margin-bottom: 0;
   padding: 0;
   flex: 0.2 auto;
@@ -112,22 +110,81 @@ header > .actions {
   list-style: none;
   display: flex;
 }
-header > .actions > li {
-  padding: 5px;
-}
 
-header > .locale-wrapper {
+.locale-wrapper {
   width: unset;
   flex: 0.1 auto;
-  /*background-color: $dark-green;*/
 }
 
-header .button {
+.search-bar::placeholder {
+  color: $black;
+  text-decoration: underline;
+}
+
+.actions > li {
+  padding-right: 1rem;
+}
+
+.button {
   color: $black !important;
-  padding: 5px;
+  padding: 0.3rem;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  box-shadow: 0px 1px 3px #111;
+  box-shadow: 0 1px 3px #111;
+}
+
+.switch-user /deep/ select {
+  -webkit-border-radius: 0 0.3rem 0 0;
+  -moz-border-radius: 0 0.3rem 0 0;
+  border-radius: 0 0.3rem 0 0;
+}
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+  header > * {
+    margin-top: 0.5rem;
+  }
+  .logo-wrapper {
+    display: none;
+  }
+  .switch-user /deep/ select {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+}
+@media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {
+  header {
+  }
+  .search-bar {
+    width: 100%;
+    order: 1;
+    margin-top: 0.5rem;
+  }
+  .logo-wrapper {
+    display: none;
+  }
+  .switch-user /deep/ select {
+    -webkit-border-radius: 0 0.3rem 0 0.3rem;
+    -moz-border-radius: 0 0.3rem 0 0.3rem;
+    border-radius: 0 0.3rem 0 0.3rem;
+  }
+}
+
+@media only screen and (min-device-width: 1025px) and (max-device-width: 1224px) {
+  header {
+    flex-wrap: nowrap;
+  }
+  .logo-wrapper {
+    display: none;
+  }
+}
+@media only screen and (min-device-width: 1224px) {
+  header {
+    flex-wrap: nowrap;
+  }
 }
 </style>

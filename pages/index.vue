@@ -11,7 +11,7 @@
         {{ $t('text.about') }}
       </A>
     </div>
-    <ChangeLocale />
+    <ChangeLocale class="switch-locale" />
   </Content>
 </template>
 
@@ -61,5 +61,13 @@ h2 {
 }
 .links {
   padding-top: 15px;
+}
+.switch-locale {
+  align-self: flex-end;
+}
+.select-box-wrapper .select {
+  -webkit-border-radius: 0.4rem !important;
+  -moz-border-radius: 0.4rem !important;
+  border-radius: 0.4rem !important;
 }
 </style>

@@ -4,7 +4,6 @@
     :items="users"
     :mapper="mapper"
     :on-change="onChange"
-    name="users"
   />
 </template>
 
@@ -16,18 +15,14 @@ export default {
   props: {},
   data: function() {
     return {
-      email: this.$store.state.user.current.email
-    }
-  },
-  computed: {
-    users() {
-      return [
+      users: [
         { name: 'borvelt', email: 'borvelt@gmail.com' },
         { name: 'Lenny Montana', email: 'lucabrasi@gmail.com' },
         { name: 'Walter Bishop', email: 'walterbishop@gmail.com' },
         { name: 'Ernest Rutherford', email: 'erru@gmail.com' },
         { name: 'Ted Beneke', email: 'ted@gmail.com' }
-      ]
+      ],
+      email: this.$store.state.user.current.email
     }
   },
   methods: {

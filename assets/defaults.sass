@@ -8,8 +8,7 @@ $title-font: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 
 html
   background-color: $green
   font-family: $font-stack
-  font-size: $font-size
-  word-spacing: 1px
+  font-size: $default-font-size
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
   -moz-osx-font-smoothing: grayscale
@@ -17,19 +16,27 @@ html
   box-sizing: border-box
   color: $white
 
+img
+  width: 100%
+
+input, textarea, select, button
+  font-size: $default-font-size //calc(0.4rem + 1vw)
+  @media only screen and (min-device-width: 0px) and (max-device-width: 319px)
+    font-size: calc(0.75rem + 2vw)
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+    font-size: calc(0.8rem + 1vw)
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px)
+    font-size: calc(0.7rem + 1vw)
 
 input,
 textarea 
   color: $white
-
-
 
 *,
 *:before,
 *:after
   box-sizing: border-box
   margin: 0
-  font-size: $font-size
 
 *:focus
   outline: none

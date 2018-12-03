@@ -5,9 +5,6 @@
 </template>
 
 <style scoped>
-img {
-  width: 100%;
-}
 .logo-wrapper {
   flex: 1 auto;
   display: flex;

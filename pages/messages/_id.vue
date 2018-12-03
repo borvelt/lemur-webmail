@@ -1,6 +1,6 @@
 <template>
   <Content>
-    <Header :title="message.subject" />
+    <Header />
     <div class="show-message">
       <div class="messages-list">
         <div :key="message.time" class="message-item">
@@ -34,6 +34,7 @@ export default {
 }
 </script>
 
+<!--remove scoped to h2 settings work... -->
 <style scoped lang="scss">
 @import '~assets/messages';
 .show-message {
@@ -42,6 +43,7 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.message-item {
+.header /deep/ h2 {
+  font-size: 1.5rem !important;
 }
 </style>

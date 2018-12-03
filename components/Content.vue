@@ -14,8 +14,8 @@
   align-items: stretch;
   flex-direction: column;
   box-shadow: 3px 3px 20px #111;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 5px;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem;
 }
 </style>

@@ -40,11 +40,14 @@ export default {
 .select-box-wrapper {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
 }
 .select-box-wrapper > select {
+  width: 100%;
   border: none;
   background-color: $dark-green;
   color: $white;
+  padding: 0 0.4rem 0 0.4rem;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 </style>
