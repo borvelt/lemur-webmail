@@ -7,6 +7,7 @@
         :placeholder="$t('mail.to')"
         :class="{ error: error.to }"
         type="text"
+        class="to"
         @blur="_validate"
       />
       <input
@@ -119,6 +120,19 @@ export default {
   border-bottom: 1px solid $white;
   flex: 1 auto;
   max-height: $compose-body-input-max-height;
+}
+
+.compose-body .to {
+  direction: ltr;
+}
+.compose-body .to:-moz-placeholder {
+  text-align: right;
+}
+.compose-body .to:-ms-input-placeholder {
+  text-align: right;
+}
+.compose-body .to::-webkit-input-placeholder {
+  text-align: right;
 }
 
 .compose-body textarea {

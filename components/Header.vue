@@ -129,6 +129,12 @@ export default {
   border-radius: 0 0.3rem 0 0;
 }
 
+.SwitchUser /deep/ select:lang(fa) {
+  -webkit-border-radius: 0.3rem 0 0 0;
+  -moz-border-radius: 0.3rem 0 0 0;
+  border-radius: 0.3rem 0 0 0;
+}
+
 @media only screen and (min-device-width: 0px) and (max-device-width: 600px) {
   .Header {
     flex-direction: column;

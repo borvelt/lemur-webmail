@@ -30,7 +30,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/mail.js'],
+  plugins: ['~/plugins/mail.js', '~/plugins/i18n.js'],
 
   /*
    ** Nuxt.js modules

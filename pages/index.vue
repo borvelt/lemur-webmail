@@ -60,8 +60,14 @@ export default {
   align-self: flex-end;
 }
 .ChangeLocale /deep/ select {
-  -webkit-border-radius: 0.4rem;
-  -moz-border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem 0 0 0;
+  -moz-border-radius: 0.4rem 0 0 0;
   border-radius: 0.4rem 0 0 0;
+}
+
+.ChangeLocale /deep/ select:lang(fa) {
+  -webkit-border-radius: 0 0.4rem 0 0;
+  -moz-border-radius: 0 0.4rem 0 0;
+  border-radius: 0 0.4rem 0 0;
 }
 </style>
