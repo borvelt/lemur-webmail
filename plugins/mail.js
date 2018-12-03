@@ -63,13 +63,6 @@ export default ({ app, error }) => {
       if (!message) {
         return error({ statusCode: 404, message: 'Post not found' })
       }
-      if (currentUserEmail === message.to) {
-        message.dest = message.from
-        message.translationString = 'text.mail.from'
-      } else {
-        message.dest = message.to
-        message.translationString = 'text.mail.to'
-      }
       return {
         message
       }

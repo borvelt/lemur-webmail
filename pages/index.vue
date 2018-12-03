@@ -65,9 +65,9 @@ h2 {
 .switch-locale {
   align-self: flex-end;
 }
-.select-box-wrapper .select {
-  -webkit-border-radius: 0.4rem !important;
-  -moz-border-radius: 0.4rem !important;
-  border-radius: 0.4rem !important;
+.select-box-wrapper /deep/ select {
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem 0 0 0;
 }
 </style>
