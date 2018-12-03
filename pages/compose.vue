@@ -86,8 +86,8 @@ export default {
       this.newMessage.from = this.$store.state.user.current.email
       this.$store
         .dispatch('mail/sendMail', this.newMessage)
-        .then(() => alert('Message sent.'))
-        .catch(error => alert(error))
+        .then(() => alert(this.$t('message.sent')))
+        .catch(() => alert(this.$t('message.failed')))
         .finally(() => {
           this.$nuxt.$loading.finish()
           this.resetForm()

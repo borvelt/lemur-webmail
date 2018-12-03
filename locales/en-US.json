@@ -5,7 +5,9 @@
   },
   "message": {
     "boxEmpty": "There is no message in your box.",
-    "messageNotFound": "Looking for what?"
+    "sent": "Message sent",
+    "notFound": "Looking for what?",
+    "failed": "Sending message failed."
   },
   "page": {
     "about": "About",
