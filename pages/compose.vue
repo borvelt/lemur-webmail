@@ -5,24 +5,25 @@
       <input
         v-model="newMessage.to"
         :placeholder="$t('text.mail.to')"
+        :class="{ error: error.to }"
         type="text"
+        @blur="_validate"
       />
-
-      <input
-        v-model="newMessage.bcc"
-        :placeholder="$t('text.mail.bcc')"
-        type="text"
-      />
-
       <input
         v-model="newMessage.subject"
         :placeholder="$t('text.mail.subject')"
+        :class="{ error: error.subject }"
+        class="subject"
         type="text"
+        @blur="_validate"
       />
 
       <textarea
         v-model="newMessage.body"
         :placeholder="$t('text.mail.body')"
+        :class="{ error: error.body }"
+        class="body"
+        @blur="_validate"
       ></textarea>
 
       <div class="actions">
@@ -50,11 +51,37 @@ export default {
   },
   data: function() {
     return {
-      newMessage: this.$store.app.$mail.initialize()
+      newMessage: this.$store.app.$mail.initialize(),
+      error: {}
     }
   },
   methods: {
+    _validate() {
+      this.error = {}
+      const emailRegex = /\S+@\S+\.\S+/
+      const v = this.newMessage
+      if (!emailRegex.test(v.to)) {
+        this.error['to'] = 'validation.email.notMatched'
+        return false
+      }
+      if (v.to === '' || typeof v.to !== typeof '') {
+        this.error['to'] = 'validation.email.empty'
+        return false
+      }
+      if (v.subject === '' || typeof v.subject !== typeof '') {
+        this.error['subject'] = 'validation.subject.empty'
+        return false
+      }
+      if (v.body === '' || typeof v.body !== typeof '') {
+        this.error['body'] = 'validation.body.empty'
+        return false
+      }
+      return true
+    },
     send() {
+      if (!this._validate()) {
+        return false
+      }
       this.$nuxt.$loading.start()
       this.newMessage.from = this.$store.state.user.current.email
       this.$store
@@ -111,5 +138,12 @@ export default {
 
 ::placeholder {
   opacity: 1;
+}
+
+.error {
+  border-color: $error-color !important;
+}
+.error-message {
+  color: $error-color;
 }
 </style>
