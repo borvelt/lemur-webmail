@@ -1,11 +1,11 @@
 <template>
   <header class="Header">
     <Logo />
-    <H2>{{ title || $t('text.' + routeName) }}</H2>
+    <H2>{{ title || $t('page.' + routeName) }}</H2>
 
     <input
       v-model="q"
-      :placeholder="$t('text.searchPlaceHolder')"
+      :placeholder="$t('input.searchPlaceHolder')"
       disabled
       type="text"
       class="search-bar"
@@ -121,7 +121,6 @@ export default {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  box-shadow: 0 1px 3px #111;
 }
 
 .SwitchUser /deep/ select {

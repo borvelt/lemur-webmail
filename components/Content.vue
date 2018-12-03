@@ -14,7 +14,7 @@
   justify-content: flex-start;
   align-items: stretch;
   flex-direction: column;
-  box-shadow: 3px 3px 20px #111;
+  box-shadow: 0.1rem 0.1rem 1rem #111;
   -webkit-border-radius: 0.4rem;
   -moz-border-radius: 0.4rem;
   border-radius: 0.4rem;

@@ -10,7 +10,7 @@
   background-color: transparent;
   color: $white !important;
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   border: 1px solid;
   text-decoration: none !important;
   box-sizing: border-box;

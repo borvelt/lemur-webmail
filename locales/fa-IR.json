@@ -1,5 +1,28 @@
 {
-  "text": {
-    "title": "لیمِر"
+  "lemur": {
+    "title": "لیمِر",
+    "description": "ارتباطی به هوشمندی لیمِر"
+  },
+  "message": {
+    "boxEmpty": "پیامی در صندوق شما وجود ندارد.",
+    "messageNotFound": "موردی یافت نشد."
+  },
+  "page": {
+    "about": "درباره",
+    "compose": "نوشتن",
+    "sent": "ارسال شده",
+    "inbox": "جعبه دریافت",
+    "messages-id": "پیام ها"
+  },
+  "mail": {
+    "subject": "موضوع",
+    "to": "به",
+    "from": "از",
+    "body": "متن خود را اینجا بنویسید",
+    "send": "ارسال",
+    "discard": "دست کشیدن"
+  },
+  "input": {
+    "searchPlaceHolder": "غیر فعال"
   }
 }

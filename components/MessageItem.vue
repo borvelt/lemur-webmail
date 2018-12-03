@@ -2,11 +2,11 @@
   <div class="MessageItem-wrapper">
     <div :key="item.time" class="MessageItem">
       <div>
-        <h5 class="label">{{ $t('text.mail.subject') }}</h5>
+        <h5 class="label">{{ $t('mail.subject') }}:</h5>
         <span>{{ item.subject }}</span>
       </div>
       <div>
-        <h5 class="label">{{ $t(item.translationString) }}</h5>
+        <h5 class="label">{{ $t(item.translationString) }}:</h5>
         <span>{{ item.dest }}</span>
       </div>
       <p class="label body">{{ item.body }}</p>
@@ -22,10 +22,10 @@ export default {
     const currentUserEmail = this.$store.state.user.current.email
     if (currentUserEmail === this.item.to) {
       this.item.dest = this.item.from
-      this.item.translationString = 'text.mail.from'
+      this.item.translationString = 'mail.from'
     } else {
       this.item.dest = this.item.to
-      this.item.translationString = 'text.mail.to'
+      this.item.translationString = 'mail.to'
     }
   }
 }
@@ -55,7 +55,7 @@ need messageItem styles in parent directory.-->
   flex-direction: column;
   align-items: flex-start;
   padding: 0.5rem 0 0.7rem 0;
-  margin: 0.5rem 0 0.5rem 0.1px;
+  margin: 0.5rem 0;
 }
 
 .MessageItem.centered {
@@ -63,11 +63,11 @@ need messageItem styles in parent directory.-->
 }
 
 .MessageItem div {
-  margin: 5px 0 5px 0;
+  margin: 0.2rem 0 0.2rem 0;
 }
 
 .MessageItem .label {
-  margin: 0 10px 0 3px;
+  margin: 1rem;
   display: inline;
 }
 

@@ -4,14 +4,14 @@
     <div class="compose-body">
       <input
         v-model="newMessage.to"
-        :placeholder="$t('text.mail.to')"
+        :placeholder="$t('mail.to')"
         :class="{ error: error.to }"
         type="text"
         @blur="_validate"
       />
       <input
         v-model="newMessage.subject"
-        :placeholder="$t('text.mail.subject')"
+        :placeholder="$t('mail.subject')"
         :class="{ error: error.subject }"
         class="subject"
         type="text"
@@ -20,7 +20,7 @@
 
       <textarea
         v-model="newMessage.body"
-        :placeholder="$t('text.mail.body')"
+        :placeholder="$t('mail.body')"
         :class="{ error: error.body }"
         class="body"
         @blur="_validate"
@@ -28,10 +28,10 @@
 
       <div class="actions">
         <Button class="gray no-border" @click.native="send">
-          <span v-once>{{ $t('text.mail.send') }}</span>
+          <span v-once>{{ $t('mail.send') }}</span>
         </Button>
         <Button class="gray no-border" @click.native="resetForm">
-          <span v-once>{{ $t('text.mail.discard') }}</span>
+          <span v-once>{{ $t('mail.discard') }}</span>
         </Button>
       </div>
     </div>

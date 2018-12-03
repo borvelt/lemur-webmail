@@ -8,7 +8,7 @@
       <MessageItem :item="message" />
     </A>
     <div v-if="!list.length" class="MessageItem centered">
-      {{ $t('text.mail.boxEmpty') }}
+      {{ $t('message.boxEmpty') }}
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
 <style>
 .MessagesList {
   width: 90%;
-  padding: 10px 0;
+  padding: 0.2rem 0;
   list-style: none;
 }
 .A {

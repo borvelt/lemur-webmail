@@ -1,33 +1,29 @@
 {
   "lemur": {
-    "about": "Why lemur?"
-  },
-  "text": {
-    "about": "About",
-    "start": "Start",
     "title": "Lemur Web Mail",
-    "description": "A web mail to communicate like lemur",
-    "lemur": "lemur",
+    "description": "A web mail to communicate like lemur"
+  },
+  "message": {
+    "boxEmpty": "There is no message in your box.",
+    "messageNotFound": "Looking for what?"
+  },
+  "page": {
+    "about": "About",
     "compose": "Compose",
     "sent": "Sent",
     "inbox": "Inbox",
-    "draft": "Draft",
-    "flagged": "Flagged",
-    "search": "Search",
-    "searchPlaceHolder": "disabled :(",
-    "messages-id": "Messages",
-    "mail": {
-      "boxEmpty": "There is no message in your box.",
-      "messageNotFound": "Looking for what?",
-      "bcc": "BCC",
-      "subject": "Subject",
-      "to": "To",
-      "from": "From",
-      "body": "Write Your Text Here",
-      "send": "Send",
-      "discard": "Discard",
-      "sentBoxEmpty": "There is no message in your Sent Box.",
-      "inboxEmpty": "Your inbox is empty."
-    }
+    "messages-id": "Messages"
+  },
+  "mail": {
+    "bcc": "BCC",
+    "subject": "Subject",
+    "to": "To",
+    "from": "From",
+    "body": "Write Your Text Here",
+    "send": "Send",
+    "discard": "Discard"
+  },
+  "input": {
+    "searchPlaceHolder": "disabled :("
   }
 }

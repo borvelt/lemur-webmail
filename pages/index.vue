@@ -1,14 +1,14 @@
 <template>
   <Content>
     <Logo />
-    <H1>{{ $t('text.title') }}</H1>
-    <H2>{{ $t('text.description') }}</H2>
+    <H1>{{ $t('lemur.title') }}</H1>
+    <H2>{{ $t('lemur.description') }}</H2>
     <div class="links">
       <A :to="{ name: 'compose' }" class="green no-border">
-        <Button class="green"> {{ $t('text.compose') }} </Button>
+        <Button class="green"> {{ $t('page.compose') }} </Button>
       </A>
       <A :to="{ name: 'about' }" class="green no-border">
-        <Button class="green"> {{ $t('text.about') }} </Button>
+        <Button class="green"> {{ $t('page.about') }} </Button>
       </A>
     </div>
     <ChangeLocale />
@@ -48,15 +48,13 @@ export default {
 
 .H2 {
   color: $green;
-  word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .Logo-wrapper {
   width: 25%;
 }
 .links {
-  padding-top: 15px;
+  padding-top: 1rem;
 }
 .ChangeLocale {
   align-self: flex-end;
