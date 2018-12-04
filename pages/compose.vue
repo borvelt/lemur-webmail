@@ -123,16 +123,7 @@ export default {
 }
 
 .compose-body .to {
-  direction: ltr;
-}
-.compose-body .to:-moz-placeholder {
-  text-align: right;
-}
-.compose-body .to:-ms-input-placeholder {
-  text-align: right;
-}
-.compose-body .to::-webkit-input-placeholder {
-  text-align: right;
+  /*direction: ltr;*/
 }
 
 .compose-body textarea {
@@ -152,6 +143,9 @@ export default {
 
 ::placeholder {
   opacity: 1;
+}
+::placeholder:lang(fa) {
+  border: 2px solid red;
 }
 
 .error {
