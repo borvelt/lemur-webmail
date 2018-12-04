@@ -3,7 +3,12 @@
     <div class="about-body">
       <div v-show="loading">
         <H1>{{ $t('lemur.about') }}</H1>
-        <img :src="yesNo" class="yes-no-wtf" alt="yes-no-wtf" @load="loaded" />
+        <img
+          :src="yesNoImage"
+          class="yes-no-wtf"
+          alt="yes-no-wtf"
+          @load="loaded"
+        />
       </div>
       <div v-show="!loading">{{ $t('message.pleaseWait') }}</div>
     </div>
@@ -32,8 +37,8 @@ export default {
     }
   },
   async asyncData({ app }) {
-    const { data } = await app.$axios.get('https://yesno.wtf/api?force=yes')
-    return { yesNo: data.image }
+    const { data } = await app.$axios.get('/api/yesnowtf?force=yes')
+    return { yesNoImage: data.image }
   }
 }
 </script>

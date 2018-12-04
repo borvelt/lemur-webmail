@@ -1,10 +1,18 @@
 const Hapi = require('hapi')
 const consola = require('consola')
 const HapiNuxt = require('hapi-nuxt')
+const apiPlugin = require('./apiPlugin')
 
 const server = new Hapi.Server({
   host: process.env.HOST || '127.0.0.1',
   port: process.env.PORT || 3000
+})
+
+server.register({
+  plugin: apiPlugin,
+  routes: {
+    prefix: '/api'
+  }
 })
 
 server

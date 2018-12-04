@@ -67,8 +67,8 @@ export default {
 }
 
 .ChangeLocale /deep/ select:lang(fa) {
-  -webkit-border-radius: 0 0.4rem 0 0;
-  -moz-border-radius: 0 0.4rem 0 0;
-  border-radius: 0 0.4rem 0 0;
+  -webkit-border-radius: 0 0.4rem 0 0 !important;
+  -moz-border-radius: 0 0.4rem 0 0 !important;
+  border-radius: 0 0.4rem 0 0 !important;
 }
 </style>

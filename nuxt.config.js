@@ -37,6 +37,7 @@ module.exports = {
    */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/proxy',
     '@nuxtjs/axios',
     // nuxt internationalization
     ['nuxt-i18n', langConfig]
@@ -46,6 +47,10 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    proxy: false
+  },
+  proxy: {
+    '/yesnowtf': 'https://yesno.wtf/api'
   },
   //Router middleware:
   router: { middleware: 'router-store' },
