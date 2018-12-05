@@ -43,6 +43,7 @@
 import Content from '~/components/Content'
 import Header from '~/components/Header'
 import Button from '~/components/Button'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -55,6 +56,11 @@ export default {
       newMessage: this.$store.app.$mail.initialize(),
       error: {}
     }
+  },
+  computed: {
+    ...mapGetters({
+      currentUserEmail: 'user/email'
+    })
   },
   methods: {
     _validate() {
@@ -84,7 +90,7 @@ export default {
         return false
       }
       this.$nuxt.$loading.start()
-      this.newMessage.from = this.$store.state.user.current.email
+      this.newMessage.from = this.currentUserEmail
       this.$store
         .dispatch('mail/sendMail', this.newMessage)
         .then(() => alert(this.$t('message.sent')))

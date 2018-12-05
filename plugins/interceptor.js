@@ -1,5 +1,7 @@
 export default function({ $axios }) {
+  console.log($axios.defaults.baseURL)
   $axios.defaults.baseURL = process.env.BASE_URL
+  console.log($axios.defaults.baseURL)
   if (!process.static || process.browser) {
     return
   }

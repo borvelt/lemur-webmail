@@ -10,3 +10,7 @@ export const mutations = {
     state.current = user
   }
 }
+
+export const getters = {
+  email: state => state.current.email
+}

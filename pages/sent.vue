@@ -9,6 +9,7 @@
 import Content from '~/components/Content'
 import Header from '~/components/Header'
 import MessagesList from '~/components/MessagesList'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -17,11 +18,16 @@ export default {
     MessagesList
   },
   computed: {
-    messages: function() {
-      return this.$store.state.mail.messages.filter(
-        message => message.from === this.$store.state.user.current.email
-      )
-    }
+    ...mapGetters({
+      messages: 'mail/sentbox'
+    })
+  },
+  mounted() {
+    const { user, messages } = mapGetters({
+      user: 'user/email',
+      messages: 'mail/sentbox'
+    })
+    console.log(messages.call(this), user.call(this))
   }
 }
 </script>

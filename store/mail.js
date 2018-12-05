@@ -1,16 +1,16 @@
 export const state = () => ({
-  messages: []
+  mails: []
 })
 
 export const mutations = {
-  new(state, newMessage) {
-    state.messages.push(newMessage)
+  new(state, newMail) {
+    state.mails.push(newMail)
   }
 }
 
 export const actions = {
-  async sendMail({ commit }, newMessage) {
-    const { status, ...message } = await this.app.$mail.send(newMessage)
+  async sendMail({ commit }, newMail) {
+    const { status, ...message } = await this.app.$mail.send(newMail)
     if (status) {
       commit('new', message)
     } else {
@@ -18,4 +18,12 @@ export const actions = {
     }
     return status
   }
+}
+
+export const getters = {
+  inbox: (state, getters) =>
+    state.mails.filter(mail => mail.to === getters['user/email']),
+
+  sentbox: state => state.mails
+  // state.mails.filter(mail => mail.from === getters['user/email'])
 }

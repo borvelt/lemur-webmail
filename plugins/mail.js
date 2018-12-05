@@ -13,33 +13,33 @@ export default ({ app, error }) => {
         data
       )
     },
-    send(message) {
+    send(mail) {
       return new Promise(resolve =>
         setTimeout(
           () =>
             resolve(
-              Object.assign({}, { status: true, time: Date.now() }, message)
+              Object.assign({}, { status: true, time: Date.now() }, mail)
             ),
           1000
         )
       )
     },
     findById(params) {
-      const currentUserEmail = app.store.state.user.current.email
-      const messages = app.store.state.mail.messages
-      const [message] = messages.filter(
-        message =>
-          message.time === params.id &&
-          (message.from === currentUserEmail || message.to === currentUserEmail)
+      const currentUserEmail = app.store.getters['user/email']
+      const mails = app.store.state.mail.mails
+      const [mail] = mails.filter(
+        mail =>
+          mail.time === params.id &&
+          (mail.from === currentUserEmail || mail.to === currentUserEmail)
       )
-      if (!message) {
+      if (!mail) {
         return error({
           statusCode: 404,
-          message: app.i18n.t('message.notFound')
+          mail: app.i18n.t('mail.notFound')
         })
       }
       return {
-        message
+        message: mail
       }
     }
   }
