@@ -1,7 +1,12 @@
 export default function({ $axios }) {
-  if (!process.static || !process.server) {
+  $axios.defaults.baseURL = process.env.BASE_URL
+  if (!process.static || process.browser) {
     return
   }
+
+  //TODO: mention if you need to call api from BASE_URL you should change
+  // this line.
+  $axios.defaults.baseURL = process.env._AXIOS_BASE_URL_
   const { join, dirname } = require('path')
   const { writeFile, mkdir, existsSync, readFile } = require('fs')
   $axios.interceptors.response.use(function(response) {

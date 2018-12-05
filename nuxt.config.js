@@ -71,6 +71,7 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      // I want to use `fs` node js module in $axios interceptor.
       config.node = { fs: 'empty' }
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
