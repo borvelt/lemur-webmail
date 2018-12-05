@@ -27,13 +27,11 @@ export default {
   }
 }
 </script>
-<style scoped lang="scss">
-@import '~assets/colors';
+<style scoped lang="sass">
+@import '~assets/colors'
 
-a {
-  color: $default-links-color;
-}
-a:hover {
-  color: $default-links-color-hover;
-}
+.A
+  color: $default-links-color
+  &:hover
+    color: $default-links-color-hover
 </style>

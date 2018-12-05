@@ -1,0 +1,41 @@
+@mixin respond-to($media)
+  @if $media == handhelds
+    @media only screen and (max-width: 319px)
+      @content
+
+  @else if $media == phones
+    @media only screen and (min-width: 320px) and (max-width: 480px)
+      @content
+
+  @else if $media == tablets
+    @media only screen and (min-width: 481px) and (max-width: 1024px)
+      @content
+
+  @else if $media == wide-screens
+    @media only screen and (min-width: 1024px)
+      @content
+
+  @else if $media == small-screens
+    @media only screen and (max-width: 600px)
+      @content
+
+  @else if $media == medium-screens
+    @media only screen and (min-device-width: 601px) and (max-device-width: 1024px)
+      @content
+
+  @else if $media == large-screens
+    @media only screen and (min-device-width: 1025px) and (max-device-width: 1224px)
+      @content
+
+  @else if $media == xlarge-screens
+    @media only screen and (min-device-width: 1224px)
+      @content
+
+@mixin border-radius($property)
+  -webkit-border-radius: $property
+  -moz-border-radius: $property
+  border-radius: $property
+
+
+@function unit($a:0, $b:0, $c:0, $d:0, $i:'')
+  @return ($a/10)rem ($b/10)rem ($c/10)rem ($d/10)rem $i

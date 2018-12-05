@@ -4,13 +4,12 @@
   </div>
 </template>
 
-<style scoped>
-.Logo-wrapper {
-  flex: 1 auto;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
+<style lang="sass" scoped>
+.Logo-wrapper
+  flex: 1 auto
+  display: flex
+  align-self: center
+  justify-content: center
+  align-items: center
+  align-content: center
 </style>

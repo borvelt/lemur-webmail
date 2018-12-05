@@ -25,13 +25,12 @@ export default {
 }
 </script>
 
-<style>
-.MessagesList {
-  width: 90%;
-  padding: 0.2rem 0;
-  list-style: none;
-}
-.A {
-  text-decoration: none;
-}
+<style lang="sass">
+.MessagesList
+  width: 90%
+  padding: 0.2rem 0
+  list-style: none
+
+.A
+  text-decoration: none
 </style>

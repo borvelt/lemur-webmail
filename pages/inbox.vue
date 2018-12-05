@@ -26,11 +26,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.inbox-body {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+<style scoped lang="sass">
+.inbox-body
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
 </style>

@@ -1,5 +1,6 @@
 @import '~assets/dimensions'
 @import '~assets/colors'
+@import "~assets/mixins"
 
 $font-stack: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
 $title-font: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
@@ -19,35 +20,29 @@ img
   width: 100%
 
 input, textarea, select, button
-  font-size: $default-font-size //calc(0.4rem + 1vw)
-  @media only screen and (min-device-width: 0px) and (max-device-width: 319px)
+  font-size: $default-font-size
+  @include respond-to(handhelds)
     font-size: calc(0.75rem + 2vw)
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+
+  @include respond-to(phones)
     font-size: calc(0.8rem + 1vw)
-  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px)
+  @include respond-to(tablets)
     font-size: calc(0.7rem + 1vw)
 
 input,
 textarea 
   color: $white
-
-*,
-*:before,
-*:after
-  box-sizing: border-box
-  margin: 0
-
-*:focus
-  outline: none
-
-::placeholder
-  color: $white
-  opacity: 0.5
-
-
-::-ms-input-placeholder
+  ::placeholder
+    color: $white
+    opacity: 0.5
+  ::-ms-input-placeholder
+    color: $white
+  ::-ms-input-placeholder
     color: $white
 
-
-::-ms-input-placeholder
-  color: $white
+*
+  &:before, &:after
+    box-sizing: border-box
+    margin: 0
+  &:focus
+    outline: none

@@ -101,57 +101,35 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '~assets/colors';
-@import '~assets/dimensions';
+<style scoped lang="sass">
+@import '~assets/colors'
+@import '~assets/dimensions'
 
-.compose-body {
-  padding: $compose-body-padding;
-  display: flex;
-  flex-direction: column;
-  flex: 1 auto;
-}
+.compose-body
+  padding: $compose-body-padding
+  display: flex
+  flex-direction: column
+  flex: 1 auto
+  input,textarea
+    border: none
+    padding: $compose-body-padding
+    background-color: transparent
+    border-bottom: 1px solid $white
+    flex: 1 auto
+    max-height: $compose-body-input-max-height
+    resize: none
+    &::placeholder
+      color: $white
+      opacity: 1
+  textarea
+      max-height: unset
+  .actions
+    display: flex
+    flex-direction: row
+    align-self: flex-end
+    .Button
+      margin: $compose-body-actions-margin
 
-.compose-body input,
-.compose-body textarea {
-  border: none;
-  padding: $compose-body-padding;
-  background-color: transparent;
-  border-bottom: 1px solid $white;
-  flex: 1 auto;
-  max-height: $compose-body-input-max-height;
-}
-
-.compose-body .to {
-  /*direction: ltr;*/
-}
-
-.compose-body textarea {
-  resize: none;
-  max-height: unset;
-}
-
-.compose-body .actions {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-}
-
-.compose-body .actions .Button {
-  margin: $compose-body-actions-margin;
-}
-
-::placeholder {
-  opacity: 1;
-}
-::placeholder:lang(fa) {
-  border: 2px solid red;
-}
-
-.error {
-  border-color: $error-color !important;
-}
-.error-message {
-  color: $error-color;
-}
+.error
+  border-color: $error-color !important
 </style>

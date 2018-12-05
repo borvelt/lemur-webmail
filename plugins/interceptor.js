@@ -21,8 +21,7 @@ export default function({ $axios }) {
     } catch (e) {
       try {
         mkdir(dirname(path), { recursive: true }, () => {
-          writeFile(path, JSON.stringify(response.data), () => {
-          })
+          writeFile(path, JSON.stringify(response.data), () => {})
         })
         return response
       } catch (e) {

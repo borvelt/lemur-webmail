@@ -1,6 +1,11 @@
 <template>
   <div class="SelectBox-wrapper">
-    <select :value="value" :name="name" @change="_onChange($event)">
+    <select
+      :value="value"
+      :name="name"
+      class="SelectBox"
+      @change="_onChange($event)"
+    >
       <option v-for="item in list" :key="item.key" :value="item.key">
         {{ item.value }}
       </option>
@@ -27,20 +32,19 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '~assets/colors';
+<style scoped lang="sass">
+@import '~assets/colors'
+@import '~assets/mixins'
 
-.SelectBox-wrapper {
-  display: flex;
-  justify-content: flex-end;
-}
-.SelectBox-wrapper > select {
-  width: 100%;
-  border: none;
-  background-color: $dark-green;
-  color: $white;
-  padding: 0 0.4rem 0 0.4rem;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-}
+.SelectBox-wrapper
+  display: flex
+  justify-content: flex-end
+  .SelectBox
+    width: 100%
+    border: none
+    background-color: $dark-green
+    color: $white
+    padding: 0 0rem 0 0.4rem
+    -webkit-appearance: none
+    @include border-radius(0)
 </style>

@@ -37,38 +37,30 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '~assets/colors';
-@import '~assets/defaults';
+<style scoped lang="sass">
+@import '~assets/colors'
+@import '~assets/defaults'
+@import '~assets/mixins'
 
-.H1 {
-  font-family: $title-font;
-  display: block;
-}
+.H1
+  font-family: $title-font
+  display: block
 
-.H2 {
-  color: $green;
-}
+.H2
+  color: $green
 
-.Logo-wrapper {
-  width: 25%;
-}
-.links {
-  padding-top: 1rem;
-}
-.ChangeLocale {
-  align-self: flex-end;
-}
-.ChangeLocale /deep/ select {
+.Logo-wrapper
+  width: 25%
+
+.links
+  padding-top: 1rem
+
+.ChangeLocale
+  align-self: flex-end
+
+.ChangeLocale /deep/ select
   // TODO: why we need to add !important, when wanna build.
-  -webkit-border-radius: 0.4rem 0 0 0 !important;
-  -moz-border-radius: 0.4rem 0 0 0 !important;
-  border-radius: 0.4rem 0 0 0 !important;
-}
-
-.ChangeLocale /deep/ select:lang(fa) {
-  -webkit-border-radius: 0 0.4rem 0 0 !important;
-  -moz-border-radius: 0 0.4rem 0 0 !important;
-  border-radius: 0 0.4rem 0 0 !important;
-}
+  @include border-radius(0.4rem 0 0 0 !important)
+  &:lang(fa)
+    @include border-radius(0 0.4rem 0 0 !important)
 </style>

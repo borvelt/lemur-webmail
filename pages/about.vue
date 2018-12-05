@@ -43,19 +43,17 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '~assets/defaults';
+<style scoped lang="sass">
+@import '~assets/defaults'
 
-.yes-no-wtf {
-  margin-top: 1rem;
-  width: 50%;
-}
+.yes-no-wtf
+  margin-top: 1rem
+  width: 50%
 
-.Content {
-  justify-content: center;
-}
-.about-body {
-  width: 100%;
-  font-family: $title-font;
-}
+.Content
+  justify-content: center
+
+.about-body
+  width: 100%
+  font-family: $title-font
 </style>

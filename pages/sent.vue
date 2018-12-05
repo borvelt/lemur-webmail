@@ -26,11 +26,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.sent-body {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+<style scoped lang="sass">
+.sent-body
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
 </style>

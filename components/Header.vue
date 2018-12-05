@@ -61,125 +61,80 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '~assets/colors';
-@import '~assets/dimensions';
+<style scoped lang="sass">
+@import '~assets/colors'
+@import '~assets/dimensions'
+@import '~assets/mixins'
 
-.Header {
-  color: $black;
-  background-color: $white;
-  width: 100%;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: stretch;
-  -webkit-border-radius: 0.4rem 0.4rem 0 0;
-  -moz-border-radius: 0.4rem 0.4rem 0 0;
-  border-radius: 0.4rem 0.4rem 0 0;
-}
+.Header
+  color: $black
+  background-color: $white
+  width: 100%
+  flex-wrap: wrap
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  align-items: stretch
+  @include border-radius(0.4rem 0.4rem 0 0)
+  @include respond-to(small-screens)
+    flex-direction: column
+    & > *
+      margin-top: 0.5rem
+  @include respond-to(large-screens)
+    flex-wrap: nowrap
+  @include respond-to(xlarge-screens)
+    flex-wrap: nowrap
 
-.Logo-wrapper {
-  max-width: 2rem;
-  flex: 0.1 auto;
-}
+.Logo-wrapper
+  max-width: 2rem
+  flex: 0.1 auto
+  @include respond-to(small-screens)
+    display: none
+  @include respond-to(medium-screens)
+      display: none
+  @include respond-to(large-screens)
+      display: none
 
-.H2 {
-  min-width: 8.9rem;
-  align-self: center;
-  flex: 0.3 auto;
-}
+.H2
+  min-width: 8.9rem
+  align-self: center
+  flex: 0.3 auto
 
-.search-bar {
-  color: $black;
-  flex: 0.3 auto;
-  text-align: center;
-  border: none;
-}
+.search-bar
+  color: $black
+  flex: 0.3 auto
+  text-align: center
+  border: none
+  &::placeholder
+    color: $black
+    text-decoration: underline
+  @include respond-to(medium-screens)
+    width: 100%
+    order: 1
+    margin-top: 0.5rem
 
-.actions {
-  margin-bottom: 0;
-  padding: 0;
-  flex: 0.2 auto;
-  align-self: center;
-  list-style: none;
-  display: flex;
-}
 
-.search-bar::placeholder {
-  color: $black;
-  text-decoration: underline;
-}
+.actions
+  margin: 0
+  padding: 0
+  flex: 0.2 auto
+  align-self: center
+  list-style: none
+  display: flex
+  li
+    padding-right: 1rem
 
-.actions > li {
-  padding-right: 1rem;
-}
+.A
+  color: $black !important
+  padding: 0.3rem
+  @include border-radius(50%)
 
-.A {
-  color: $black !important;
-  padding: 0.3rem;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-}
-
-.SwitchUser /deep/ select {
-  -webkit-border-radius: 0 0.3rem 0 0;
-  -moz-border-radius: 0 0.3rem 0 0;
-  border-radius: 0 0.3rem 0 0;
-}
-
-.SwitchUser /deep/ select:lang(fa) {
-  -webkit-border-radius: 0.3rem 0 0 0;
-  -moz-border-radius: 0.3rem 0 0 0;
-  border-radius: 0.3rem 0 0 0;
-}
-
-@media only screen and (min-device-width: 0px) and (max-device-width: 600px) {
-  .Header {
-    flex-direction: column;
-  }
-  .Header > * {
-    margin-top: 0.5rem;
-  }
-  .Logo-wrapper {
-    display: none;
-  }
-  .SwitchUser /deep/ select {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-  }
-}
-@media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {
-  header {
-  }
-  .search-bar {
-    width: 100%;
-    order: 1;
-    margin-top: 0.5rem;
-  }
-  .Logo-wrapper {
-    display: none;
-  }
-  .SwitchUser /deep/ select {
-    -webkit-border-radius: 0 0.3rem 0 0.3rem;
-    -moz-border-radius: 0 0.3rem 0 0.3rem;
-    border-radius: 0 0.3rem 0 0.3rem;
-  }
-}
-
-@media only screen and (min-device-width: 1025px) and (max-device-width: 1224px) {
-  .Header {
-    flex-wrap: nowrap;
-  }
-  .Logo-wrapper {
-    display: none;
-  }
-}
-@media only screen and (min-device-width: 1224px) {
-  .Header {
-    flex-wrap: nowrap;
-  }
-}
+.SwitchUser /deep/ .SelectBox
+  @include border-radius(0 0.3rem 0 0)
+  @include respond-to(small-screens)
+    @include border-radius(0)
+  @include respond-to(medium-screens)
+    @include border-radius(0 0.3rem 0 0.3rem)
+  &:lang(fa)
+    @include border-radius(0.3rem 0 0 0)
 </style>

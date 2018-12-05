@@ -32,46 +32,36 @@ export default {
 </script>
 <!--TODO-->
 <!-- HOW we can resolve this issue ? we should define global css because we
-need messageItem styles in parent directory.-->
-<style lang="scss">
-@import '~assets/colors';
-@import '~assets/dimensions';
+need messageItem styles in parent component.-->
+<style lang="sass">
+@import '~assets/colors'
+@import '~assets/dimensions'
+@import '~assets/mixins'
 
-.MessageItem-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.MessageItem-wrapper
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
 
-.MessageItem {
-  width: 90%;
-  background-color: $white;
-  -webkit-border-radius: $default-radius;
-  -moz-border-radius: $default-radius;
-  border-radius: $default-radius;
-  color: $black;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0.5rem 0 0.7rem 0;
-  margin: 0.5rem 0;
-}
 
-.MessageItem.centered {
-  align-items: center;
-}
-
-.MessageItem div {
-  margin: 0.2rem 0 0.2rem 0;
-}
-
-.MessageItem .label {
-  margin: 1rem;
-  display: inline;
-}
-
-.MessageItem .body {
-  text-align: left;
-}
+.MessageItem
+  @include border-radius($default-radius)
+  background-color: $white
+  color: $black
+  width: 90%
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  padding: 0.5rem 0 0.7rem 0
+  margin: 0.5rem 0
+  &.centered
+    align-items: center
+  div
+    margin: 0.2rem 0 0.2rem 0
+  .label
+    margin: 1rem
+    display: inline
+  .body
+    text-align: left
 </style>

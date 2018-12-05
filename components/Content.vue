@@ -2,21 +2,19 @@
   <div class="Content"><slot /></div>
 </template>
 
-<style lang="scss">
-@import '~assets/colors';
+<style scoped lang="sass">
+@import '~assets/colors'
+@import '~assets/mixins'
 
-.Content {
-  color: #fff;
-  background-color: $gray;
-  min-height: 85vh;
-  width: 60vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-direction: column;
-  box-shadow: 0.1rem 0.1rem 1rem #111;
-  -webkit-border-radius: 0.4rem;
-  -moz-border-radius: 0.4rem;
-  border-radius: 0.4rem;
-}
+.Content
+  color: $white
+  background-color: $gray
+  min-height: 85vh
+  width: 60vw
+  display: flex
+  justify-content: flex-start
+  align-items: stretch
+  flex-direction: column
+  box-shadow: 0.1rem 0.1rem 1rem $black
+  @include border-radius(0.4rem)
 </style>
