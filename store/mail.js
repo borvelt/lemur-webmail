@@ -1,13 +1,5 @@
 export const state = () => ({
-  mails: [
-    {
-      from: 'borvelt@gmail.com',
-      subject: 'Greet',
-      to: 'erru@gmail.com',
-      body: 'Hi Ernest',
-      time: 123456
-    }
-  ]
+  mails: []
 })
 
 export const mutations = {
