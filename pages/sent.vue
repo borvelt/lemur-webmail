@@ -18,9 +18,7 @@ export default {
   },
   computed: {
     messages: function() {
-      return this.$store.state.mail.messages.filter(
-        message => message.from === this.$store.state.user.current.email
-      )
+      return this.$store.getters['mail/sentbox']
     }
   }
 }

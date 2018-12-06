@@ -23,7 +23,7 @@ export default {
         { name: 'Ernest Rutherford', email: 'erru@gmail.com' },
         { name: 'Ted Beneke', email: 'ted@gmail.com' }
       ],
-      email: this.$store.state.user.current.email
+      email: this.$store.getters['user/email']
     }
   },
   methods: {
