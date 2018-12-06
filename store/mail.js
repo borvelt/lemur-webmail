@@ -1,5 +1,13 @@
 export const state = () => ({
-  mails: []
+  mails: [
+    {
+      from: 'borvelt@gmail.com',
+      subject: 'Greet',
+      to: 'erru@gmail.com',
+      body: 'Hi Ernest',
+      time: 123456
+    }
+  ]
 })
 
 export const mutations = {
@@ -21,9 +29,10 @@ export const actions = {
 }
 
 export const getters = {
-  inbox: (state, getters) =>
-    state.mails.filter(mail => mail.to === getters['user/email']),
-
-  sentbox: state => state.mails
-  // state.mails.filter(mail => mail.from === getters['user/email'])
+  inbox: (state, getter, rootState, rootGetters) => {
+    return state.mails.filter(mail => mail.to === rootGetters['user/email'])
+  },
+  sentbox: (state, getter, rootState, rootGetters) => {
+    return state.mails.filter(mail => mail.from === rootGetters['user/email'])
+  }
 }

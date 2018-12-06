@@ -19,8 +19,7 @@ export default {
     item: { type: Object, default: () => {} }
   },
   created() {
-    const currentUserEmail = this.$store.state.user.current.email
-    if (currentUserEmail === this.item.to) {
+    if (this.$store.getters['user/email'] === this.item.to) {
       this.item.dest = this.item.from
       this.item.translationString = 'mail.from'
     } else {

@@ -21,10 +21,6 @@ export default {
     ...mapGetters({
       messages: 'mail/inbox'
     })
-    // messages() {
-    //   console.log(this.$store.getters['mail/inbox'])
-    //   return this.$store.getters['mail/inbox']
-    // }
   }
 }
 </script>

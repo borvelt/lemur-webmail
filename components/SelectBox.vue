@@ -44,7 +44,7 @@ export default {
     border: none
     background-color: $dark-green
     color: $white
-    padding: 0 0rem 0 0.4rem
+    padding: 0 0 0 0.4rem
     -webkit-appearance: none
     @include border-radius(0)
 </style>

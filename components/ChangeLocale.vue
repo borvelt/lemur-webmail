@@ -16,7 +16,7 @@ export default {
   // props: {},
   data: function() {
     return {
-      locale: this.$store.state.i18n.locale
+      locale: this.$store.getters['i18n/locale']
     }
   },
   computed: {
