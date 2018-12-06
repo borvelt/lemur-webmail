@@ -1,5 +1,8 @@
 <template>
-  <nuxt-link :to="toWithLocale" class="A"><slot /></nuxt-link>
+  <!--<nuxt-link :to="toWithLocale" class="A" @click.stop.native="handleClick">-->
+  <!--<slot />-->
+  <!--</nuxt-link>-->
+  <a href="javascript:void(0)" @click="handleClick"> <slot /> </a>
 </template>
 
 <script>
@@ -23,6 +26,12 @@ export default {
             ].join('')
           })
         : this.to
+    }
+  },
+  methods: {
+    handleClick(e) {
+      const { parentNode } = e.target
+      parentNode.hasAttribute('ga') && this.$root.$emit('ga-click', parentNode)
     }
   }
 }

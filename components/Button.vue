@@ -1,5 +1,5 @@
 <template>
-  <Button class="Button"><slot /></Button>
+  <button class="Button"><slot /></button>
 </template>
 
 <style scoped lang="sass">

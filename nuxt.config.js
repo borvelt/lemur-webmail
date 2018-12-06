@@ -38,7 +38,9 @@ module.exports = {
   plugins: [
     '~/plugins/mail.js',
     '~/plugins/i18n.js',
-    '~/plugins/interceptor.js'
+    '~/plugins/interceptor.js',
+    { src: '~/plugins/ga.js', ssr: false },
+    '~/plugins/directives/ga.js'
   ],
 
   /*
@@ -50,6 +52,13 @@ module.exports = {
     '@nuxtjs/axios',
     // nuxt internationalization
     ['nuxt-i18n', langConfig]
+    // Google Analytics
+    // [
+    //   '@nuxtjs/google-analytics',
+    //   {
+    //     id: 'UA-130545560-1'
+    //   }
+    // ]
   ],
   /*
    ** Axios module configuration

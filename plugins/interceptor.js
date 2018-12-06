@@ -1,9 +1,11 @@
 export default function({ $axios }) {
-  $axios.defaults.baseURL = process.env.BASE_URL
+  if (process.env.NODE_ENV === 'production') {
+    // maybe it's ok to set to undefined.
+    $axios.defaults.baseURL = process.env.BASE_URL
+  }
   if (!process.static || process.browser) {
     return
   }
-
   //TODO: mention if you need to call api from BASE_URL you should change
   // this line.
   $axios.defaults.baseURL = process.env._AXIOS_BASE_URL_

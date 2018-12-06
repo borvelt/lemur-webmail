@@ -4,10 +4,24 @@
     <H1>{{ $t('lemur.title') }}</H1>
     <H2>{{ $t('lemur.description') }}</H2>
     <div class="links">
-      <A :to="{ name: 'compose' }" class="green no-border">
+      <A
+        v-ga
+        :to="{ name: 'compose' }"
+        ga-category="DOM"
+        ga-action="loaded"
+        ga-label="compose-button"
+        class="green no-border"
+      >
         <Button class="green"> {{ $t('page.compose') }} </Button>
       </A>
-      <A :to="{ name: 'about' }" class="green no-border">
+      <A
+        v-ga
+        :to="{ name: 'about' }"
+        ga-category="DOM"
+        ga-action="loaded"
+        ga-label="about-button"
+        class="green no-border"
+      >
         <Button class="green"> {{ $t('page.about') }} </Button>
       </A>
     </div>

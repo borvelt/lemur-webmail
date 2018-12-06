@@ -33,6 +33,7 @@ export default {
     loaded() {
       this.$nextTick(() => {
         this.loading = true
+        this.$ga.event('YesNoWtf', 'loaded', 'image', this.yesNoImage)
       })
     }
   },
