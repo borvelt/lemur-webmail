@@ -20,20 +20,18 @@
       @content
 
   @else if $media == medium-screens
-    @media only screen and (min-device-width: 601px) and (max-device-width: 1024px)
+    @media only screen and (min-width: 601px) and (max-width: 1024px)
       @content
 
   @else if $media == large-screens
-    @media only screen and (min-device-width: 1025px) and (max-device-width: 1224px)
+    @media only screen and (min-width: 1025px) and (max-width: 1224px)
       @content
 
   @else if $media == xlarge-screens
-    @media only screen and (min-device-width: 1224px)
+    @media only screen and (min-width: 1224px)
       @content
 
 @mixin border-radius($property)
-  -webkit-border-radius: $property
-  -moz-border-radius: $property
   border-radius: $property
 
 
