@@ -6,7 +6,10 @@ module.exports = {
   // mode: 'spa',
 
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl:
+      process.env.ENV_NODE === 'production'
+        ? process.env.BASE_URL
+        : 'http://localhost:3000/'
   },
 
   /*
@@ -70,6 +73,10 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
+
+    // Rename _nuxt to dist ;)
+    publicPath: '/dist/',
+
     extend(config, ctx) {
       // I want to use `fs` node js module in $axios interceptor.
       config.node = { fs: 'empty' }
